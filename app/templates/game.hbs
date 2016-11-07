@@ -1,1 +1,63 @@
-{{outlet}}
+<a-scene>
+  <a-assets>
+
+    <a-mixin id="laser"
+             geometry="primitive: cylinder; radius: 0.08; translate: 0 -2 0"
+             material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"
+             rotation="90 0 0" projectile collider="target: .enemy"></a-mixin>
+  </a-assets>
+
+  <!-- Behold, the power of components. -->
+  <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
+    <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number1.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number2.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number3.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number4.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number5.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number6.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number7.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number8.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image class="enemy" look-at="#player" crossorigin="" src="/assets/images/number9.gif" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+  </a-entity>
+
+  <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor><a-circle color="white" radius=".01" opacity=".1"></a-circle></a-cursor></a-camera>
+
+  <a-sky src="/assets/images/background.jpg"></a-sky>
+</a-scene>
