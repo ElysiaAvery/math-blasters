@@ -16,6 +16,13 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    firebase: {
+      apiKey: "AIzaSyAPw-Us9yDXhbY_IEl292MTJ4xnMLDSApw",
+      authDomain: "epic-mathblaster.firebaseapp.com",
+      databaseURL: "https://epic-mathblaster.firebaseio.com",
+      storageBucket: "epic-mathblaster.appspot.com",
+      messagingSenderId: "684970382153"
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
