@@ -1,0 +1,27 @@
+{
+  "questions": [{
+    "compQuestion": "4 + 5 = ?",
+    "answer": 9,
+    "display": true
+  }, {
+    "compQuestion": "2 + 5 = ?",
+    "answer": 7,
+    "display": false
+  }, {
+    "compQuestion": "3 - 2 = ?",
+    "answer": 1,
+    "display": false
+  }, {
+    "compQuestion": "6 - 3 = ?",
+    "answer": 3,
+    "display": false
+  }, {
+    "compQuestion": "4 * 2 = ?",
+    "answer": 8,
+    "display": false
+  }, {
+    "compQuestion": "10 / 5 = ?",
+    "answer": 2 ,
+    "display": false
+  }]
+}
