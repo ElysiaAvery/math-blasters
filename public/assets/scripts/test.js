@@ -1,3 +1,9 @@
+// $(function() {
+//   setTimeout(function() {
+//     $('.a-canvas').attr('style', 'height: 700px; width: 700px;');
+//   }, 500);
+//
+// });
 // collider component to check for collisions.
 AFRAME.registerComponent('collider', {
   schema: {
@@ -42,7 +48,8 @@ AFRAME.registerComponent('collider', {
     collisionResults = raycaster.intersectObjects(this.targets, true);
     collisionResults.forEach(function (target) {
       // Tell collided entity about the collision.
-      target.object.el.emit('collider-hit', {target: el});
+      numberHit(target.object.el.id);
+      target.object.el.emit('collider-hit', {target: el, info: "hello"});
     });
   }
 });
@@ -50,7 +57,7 @@ AFRAME.registerComponent('collider', {
 // projectile component to have an entity travel straight.
 AFRAME.registerComponent('projectile', {
   schema: {
-    speed: { default: -0.4 }
+    speed: { default: -0.1 }
   },
 
   tick: function () {
@@ -112,3 +119,7 @@ AFRAME.registerComponent('click-listener', {
     });
   }
 });
+
+function numberHit(numId) {
+    $('#winner').show();
+}

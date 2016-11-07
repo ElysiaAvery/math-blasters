@@ -1,0 +1,23 @@
+a-scene {
+  display: block;
+  width: 50%;
+}
+
+h1 {
+  
+}
+
+canvas.a-canvas {
+  width: 100px;
+  height: 100px;
+}
+
+.aframeWrapper{
+padding: 20px;
+
+}
+
+element.style {
+  height:500px;
+  width:500px;
+}
