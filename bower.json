@@ -1,0 +1,25 @@
+{
+  "name": "math-blasters",
+  "description": "A VR mathblasting site",
+  "main": "index.js",
+  "authors": [
+    "Satchel Grant <grantsrb@gmail.com>",
+    "Sandro Alvarez <sandroalvarez@gmail.com>",
+    "Elysia Nason",
+    "Tony Fuentes"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "moment": "^2.15.1"
+  }
+}
