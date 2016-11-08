@@ -3,10 +3,6 @@ a-scene {
   width: 50%;
 }
 
-h1 {
-  
-}
-
 canvas.a-canvas {
   width: 100px;
   height: 100px;
@@ -20,4 +16,12 @@ padding: 20px;
 element.style {
   height:500px;
   width:500px;
+}
+
+#winner {
+  display: none;
+}
+
+#continue {
+  display: none;
 }

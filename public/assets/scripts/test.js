@@ -124,7 +124,8 @@ function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
   if(numId == answer) {
-    console.log('through');
+    $('#winner').show();
+    $('#continue').show();
     $('#comparison').val('comparison');
   }
 }
