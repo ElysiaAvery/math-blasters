@@ -1,5 +1,5 @@
-<h1 style='position: fixed; bottom: 100px; color: red;' >{{question.compQuestion}}</h1>
+<h1 id="question">{{question.compQuestion}}</h1>
 {{input id="answer" value=question.answer}}
-<h1 id="winner" style='position: fixed; top: 100px; color: red;'>WINNER!</h1>
-<button id="continue" type="button" {{action 'nextQuestion'}} style='position: fixed; bottom: 100px; right: 100px; color: red;'>Continue?</button>
 <h1 id="score" style='position: fixed; top: 50px; right: 50px; color: red;'></h1>
+<h1 id="winner">WINNER!</h1>
+<button id="continue" {{action 'nextQuestion'}}>Continue?</button>

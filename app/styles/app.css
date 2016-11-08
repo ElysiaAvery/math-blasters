@@ -13,6 +13,16 @@ padding: 20px;
 
 }
 
+#question {
+  color: #808497;
+  position: fixed;
+  bottom: 5%;
+  margin-left: 5%;
+  font-size: 8em;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
+}
+
 element.style {
   height:500px;
   width:500px;
@@ -20,8 +30,29 @@ element.style {
 
 #winner {
   display: none;
+  position: fixed;
+  top: 100px;
+  color: #878097;
 }
 
 #continue {
   display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  color: #878097;
+}
+
+#header {
+  color: #808497;
+  position: fixed;
+  margin-left: 7%;
+  top: 15%;
+  font-size: 8em;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-image: url('/assets/images/pixel.png');
 }
