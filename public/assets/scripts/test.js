@@ -1,10 +1,4 @@
-// $(function() {
-//   setTimeout(function() {
-//     $('.a-canvas').attr('style', 'height: 700px; width: 700px;');
-//   }, 500);
-//
-// });
-// collider component to check for collisions.
+
 AFRAME.registerComponent('collider', {
   schema: {
     target: { default: '' }
@@ -137,30 +131,25 @@ function numberHit(numId) {
 $(function() {
   // Translation
   setInterval(function() {
-    var position = $("#entity").attr("position");
-    newPosition = translation(position, [0,0,0]);
-    // if(position.z >= -50 && away)
-    //   position.z -= .5;
-    // else if (position.z <= -10 && away == false){
-    //   position.z += .5;
-    // }
-    // if(position.z <= -50)
-    //   away = false;
-    // if(position.z >= -30)
-    //   away = true;
-
+    var position = $("#1").attr("position");
+    newPosition = translate(position, [0,0,0]);
     $("#entity").attr("position",  newPosition);
   }, 25);
-
-  $("#continue").on('click', function() {
-    console.log('hey');
-    // $('#1').attr()
-  });
 });
 
-function translation(position, speed) {
-  position.x += speed[0];
-  position.y += speed[1];
-  position.z += speed[2];
+function translate(position, step) {
+  position.x += step[0];
+  position.y += step[1];
+  position.z += step[2];
   return position.x + " " + position.y + " " + position.z;
 }
+
+// if(position.z >= -50 && away)
+//   position.z -= .5;
+// else if (position.z <= -10 && away == false){
+//   position.z += .5;
+// }
+// if(position.z <= -50)
+//   away = false;
+// if(position.z >= -30)
+//   away = true;

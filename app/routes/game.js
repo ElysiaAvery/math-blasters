@@ -10,7 +10,6 @@ export default Ember.Route.extend({
       var id = question.get('id');
       question.save();
       id++;
-      var that = this;
       this.store.findRecord('question', id%5).then(function(response) {
         response.set('display', true);
         response.save();
