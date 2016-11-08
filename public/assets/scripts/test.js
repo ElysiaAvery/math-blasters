@@ -151,11 +151,6 @@ $(function() {
 
     $("#entity").attr("position",  newPosition);
   }, 25);
-
-  $("#continue").on('click', function() {
-    console.log('hey');
-    // $('#1').attr()
-  });
 });
 
 function translation(position, speed) {
