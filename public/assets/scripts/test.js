@@ -126,6 +126,15 @@ function numberHit(numId) {
   if(numId == answer) {
     $('#winner').show();
     $('#continue').show();
-    $('#comparison').val('comparison');
+    // $('#comparison').val('comparison');
   }
+}
+
+
+function addNumber(number) {
+  $( "#mainEntity" ).append( '<a-image id="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
+    + '<a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>'
+    + '<a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>'
+    + '</a-image>' );
+  console.log("Made it Here");
 }
