@@ -49,7 +49,7 @@ AFRAME.registerComponent('collider', {
     collisionResults.forEach(function (target) {
       // Tell collided entity about the collision.
       numberHit(target.object.el.id);
-      target.object.el.emit('collider-hit', {target: el, info: "hello"});
+      target.object.el.emit('collider-hit', {target: el});
     });
   }
 });
@@ -121,5 +121,10 @@ AFRAME.registerComponent('click-listener', {
 });
 
 function numberHit(numId) {
-    $('#winner').show();
+  numId = parseInt(numId);
+  var answer = parseInt($("#answer").val());
+  if(numId == answer) {
+    console.log('through');
+    $('#comparison').val('comparison');
+  }
 }

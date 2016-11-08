@@ -1,4 +1,4 @@
-<a-scene canvas="height: 50; width: 50">
+<a-scene canvas="height: 50; width: 50" {{action 'testAction'}}>
   <a-assets>
     <img id="number1-sprite" crossorigin="" src="/assets/images/number1.gif">
 
@@ -62,3 +62,5 @@
 
   <a-sky src="/assets/images/milkyway.jpg"></a-sky>
 </a-scene>
+
+{{input value=comparison id="comparison"}}
