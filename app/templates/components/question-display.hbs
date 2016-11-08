@@ -1,4 +1,6 @@
-<h1 id="question">{{question.compQuestion}}</h1>
-{{input id="answer" value=question.answer}}
-<h1 id="winner">WINNER!</h1>
-<button id="continue" {{action 'nextQuestion'}}>Continue?</button>
+<div class="col-sm-6 col-sm-offset-3 responsive">
+  <h1 id="question">{{question.compQuestion}}</h1>
+  {{input id="answer" value=question.answer}}
+  <h1 id="winner">WINNER!</h1>
+  <button id="continue" {{action 'nextQuestion'}}>Continue?</button>
+</div>

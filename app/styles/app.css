@@ -14,10 +14,10 @@ padding: 20px;
 }
 
 #question {
+  text-align: center;
   color: #808497;
   position: fixed;
   bottom: 20%;
-  margin-left: 30%;
   font-size: 8em;
   text-shadow: 1px 1px 1px white;
   font-family: 'Orbitron', sans-serif;
@@ -29,6 +29,11 @@ element.style {
 }
 
 #winner {
+  text-align: center;
+  /*margin-left: 25%;*/
+  font-size: 8em;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
   display: none;
   position: fixed;
   top: 100px;
@@ -44,13 +49,42 @@ element.style {
 }
 
 #header {
+  text-align: center;
   color: #808497;
   position: fixed;
-  margin-left: 7%;
+  margin-left: 5%;
   top: 15%;
   font-size: 8em;
   text-shadow: 1px 1px 1px white;
   font-family: 'Orbitron', sans-serif;
+}
+
+#creation {
+  text-align: center;
+  color: #73848A;
+  position: fixed;
+  margin-left: 30%;
+  font-size: 1.5em;
+  top: 25%;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+#names {
+  text-align: center;
+  color: #73848A;
+  margin-left: 7%;
+  position: fixed;
+  font-size: 2em;
+  top: 30%;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+#answer {
+  display: none;
 }
 
 body {
