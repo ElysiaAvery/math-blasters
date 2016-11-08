@@ -25,3 +25,13 @@ element.style {
 #continue {
   display: none;
 }
+
+h1 {
+  color: #808497;
+  position: fixed;
+  bottom: 20%;
+  margin-left: 32%;
+  font-size: 8em;
+  text-shadow: 1px 1px 1px white;
+  font-family: 'Orbitron', sans-serif;
+}
