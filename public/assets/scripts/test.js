@@ -164,3 +164,12 @@ function translation(position, speed) {
   position.z += speed[2];
   return position.x + " " + position.y + " " + position.z;
 }
+
+
+function addNumber(number) {
+  $( "#mainEntity" ).append( '<a-image id="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
+    + '<a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>'
+    + '<a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>'
+    + '</a-image>' );
+  console.log("Made it Here");
+}
