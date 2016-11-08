@@ -14,7 +14,6 @@ export default Ember.Route.extend({
       this.store.findRecord('question', id%5).then(function(response) {
         response.set('display', true);
         response.save();
-        that.transitionTo('game');
       });
     }
   }

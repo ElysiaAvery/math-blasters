@@ -1,4 +1,4 @@
-<a-scene canvas="height: 50; width: 50" {{action 'testAction'}}>
+<a-scene canvas="height: 50; width: 50">
   <a-assets>
     <img id="number1-sprite" crossorigin="" src="/assets/images/number1.gif">
 
@@ -9,7 +9,7 @@
   </a-assets>
 
   <!-- Behold, the power of components. -->
-  <a-entity layout="type: circle; radius: 5" position="0 0.5 0">
+  <a-entity id='entity' layout="type: circle; radius: 5" position="0 0.5 0">
     <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
 
     <a-image id="1" class="enemy" look-at="#player" src="#number1-sprite"  transparent="true">
@@ -19,7 +19,7 @@
 
     <a-image id="2" class="enemy" look-at="#player" crossorigin="" src="/assets/images/number2.gif" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
-      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+      <!-- <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation> -->
     </a-image>
 
     <a-image id="3" class="enemy" look-at="#player" crossorigin="" src="/assets/images/number3.gif" transparent="true">
@@ -59,6 +59,7 @@
   </a-entity>
 
   <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor><a-circle color="white" radius=".01" opacity=".1"></a-circle></a-cursor></a-camera>
+  {{sun-display}}
 
   <a-sky src="/assets/images/milkyway.jpg"></a-sky>
 </a-scene>

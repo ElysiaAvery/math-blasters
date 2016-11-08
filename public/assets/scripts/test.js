@@ -119,13 +119,48 @@ AFRAME.registerComponent('click-listener', {
     });
   }
 });
-
+var score = 0;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
   if(numId == answer) {
+    score += 10;
     $('#winner').show();
     $('#continue').show();
     $('#comparison').val('comparison');
+  } else {
+    score -= 5;
   }
+  $('#score').text(score + 'pts');
+}
+
+$(function() {
+  // Translation
+  setInterval(function() {
+    var position = $("#entity").attr("position");
+    newPosition = translation(position, [0,0,0]);
+    // if(position.z >= -50 && away)
+    //   position.z -= .5;
+    // else if (position.z <= -10 && away == false){
+    //   position.z += .5;
+    // }
+    // if(position.z <= -50)
+    //   away = false;
+    // if(position.z >= -30)
+    //   away = true;
+
+    $("#entity").attr("position",  newPosition);
+  }, 25);
+
+  $("#continue").on('click', function() {
+    console.log('hey');
+    // $('#1').attr()
+  });
+});
+
+function translation(position, speed) {
+  position.x += speed[0];
+  position.y += speed[1];
+  position.z += speed[2];
+  return position.x + " " + position.y + " " + position.z;
 }
