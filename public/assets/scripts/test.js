@@ -118,7 +118,7 @@ var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
-  if(numId == answer) {
+  if(numId%9 == answer) {
     score += 10;
     clearInterval(interval);
     $('#winner').show();
@@ -132,13 +132,18 @@ function numberHit(numId) {
 
 $(function() {
   startTimer(20);
-  addNumber(9);
-  addNumber(3);
-  addNumber(4);
+  var randomNums = generateRandomNumberList(9);
+  var orbitAngle = Math.PI/150.0;
   // Translation
   setInterval(function() {
-    var position = $("#1").attr("position");
-    newPosition = translate(position, [0,0,0]);
+    // Orbit
+    for (var i = 0; i < randomNums.length; i++) {
+      var numId = randomNums[i] + 9; // + 9 because of unique ids
+      var position = $("#" + numId + "").attr('position');
+      $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
+    }
+    var position = $("#entity").attr("position");
+    newPosition = translate(position, [0,0,-.01]);
     $("#entity").attr("position",  newPosition);
   }, 25);
 });
@@ -161,13 +166,28 @@ function translate(position, step) {
 // if(position.z >= -30)
 //   away = true;
 
+function generateRandomNumberList(maxNum) {
+  numList = [];
+  for (var i = 1; i < maxNum + 1; i++) {
+    numList.push(i);
+  }
+  var randomList = [];
+  for (var i = 1; i < maxNum + 1; i++) {
+    var randomIndex = Math.round(Math.random()*100)%numList.length;
+    randomList.push(numList[randomIndex]);
+    numList.splice(randomIndex,1);
+  }
+  return randomList;
+}
+
 
 function addNumber(number) {
-  $( "#entity" ).append( '<a-image id="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
+  $( "#entity" ).append( '<a-image class="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
     + '<a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>'
     + '<a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>'
     + '</a-image>' );
 }
+
 
 function startTimer(seconds) {
   var second = 0;
@@ -179,4 +199,45 @@ function startTimer(seconds) {
     }
     second++;
   }, 1000);
+}
+
+function orbit(position, angle, rotationAxis) {
+  var positionVector = [position.x,position.y,position.z];
+  positionVector = orbitalGenerator(positionVector, angle, rotationAxis);
+  return positionVector.join(" ");
+}
+
+function rotate(rotationAngles) {
+  var rotationVector = [rotationAngles.x,rotationAngles.y,rotationAngles.z];
+  rotationVector = rotationTransform(rotationVector, 1, 5, -3);
+  return rotationVector.join(" ");
+}
+
+function rotationTransform(angleVector, xAng, yAng, zAng) {
+  angleVector[0] += xAng;
+  angleVector[1] += yAng;
+  angleVector[2] += zAng;
+  return angleVector;
+}
+
+function orbitalGenerator(vector, angle, rotationAxis) {
+  var axes = findAxes(rotationAxis);
+
+  var newCoord1 = Math.cos(angle)*vector[axes[0]] - Math.sin(angle)*vector[axes[1]];
+  var newCoord2 = Math.sin(angle)*vector[axes[0]] + Math.cos(angle)*vector[axes[1]];
+
+  vector[axes[0]] = newCoord1;
+  vector[axes[1]] = newCoord2;
+
+  return vector;
+}
+
+function findAxes(rotationAxis) {
+  var axes = [];
+  for(var i = 0; i < 3; i++) {
+    if(i != rotationAxis) {
+      axes.push(i);
+    }
+  }
+  return axes;
 }
