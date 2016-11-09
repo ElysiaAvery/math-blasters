@@ -1,6 +1,15 @@
 <a-scene canvas="height: 50; width: 50">
   <a-assets>
     <img id="number1-sprite" crossorigin="" src="/assets/images/number1.gif">
+    <img id="number2-sprite" crossorigin="" src="/assets/images/number2.gif">
+    <img id="number3-sprite" crossorigin="" src="/assets/images/number3.gif">
+    <img id="number4-sprite" crossorigin="" src="/assets/images/number4.gif">
+    <img id="number5-sprite" crossorigin="" src="/assets/images/number5.gif">
+    <img id="number6-sprite" crossorigin="" src="/assets/images/number6.gif">
+    <img id="number7-sprite" crossorigin="" src="/assets/images/number7.gif">
+    <img id="number8-sprite" crossorigin="" src="/assets/images/number8.gif">
+    <img id="number9-sprite" crossorigin="" src="/assets/images/number9.gif">
+
 
     <a-mixin id="laser"
              geometry="primitive: cylinder; radius: 0.08; translate: 0 -2 0"
@@ -8,9 +17,16 @@
              rotation="90 0 0" projectile collider="target: .enemy"></a-mixin>
   </a-assets>
 
-  <!-- Behold, the power of components. -->
   <a-entity id='entity' layout="type: circle; radius: 5" position="0 0.5 0">
     <a-animation attribute="rotation" dur="500000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
+    <a-image id="9" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number9-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+    <a-image id="7" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number7-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
   </a-entity>
 
   <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor><a-circle color="white" radius=".01" opacity=".1"></a-circle></a-cursor></a-camera>
@@ -23,42 +39,42 @@
       <a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="2" class="enemy" position="50 0 0" look-at="#player" crossorigin="" src="/assets/images/number2.gif" transparent="true">
+    <a-image id="2" class="enemy" position="50 0 0" look-at="#player" crossorigin="" src="#number2-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <!-- <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation> -->
     </a-image>
 
-    <a-image id="3" class="enemy" position="-50 0 0" look-at="#player" crossorigin="" src="/assets/images/number3.gif" transparent="true">
+    <a-image id="3" class="enemy" position="-50 0 0" look-at="#player" crossorigin="" src="#number3-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="4" class="enemy" position="0 50 0" look-at="#player" crossorigin="" src="/assets/images/number4.gif" transparent="true">
+    <a-image id="4" class="enemy" position="0 50 0" look-at="#player" crossorigin="" src="#number4-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="5" class="enemy" position="50 50 0" look-at="#player" crossorigin="" src="/assets/images/number5.gif" transparent="true">
+    <a-image id="5" class="enemy" position="50 50 0" look-at="#player" crossorigin="" src="#number5-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="6" class="enemy" position="50 -50 0" look-at="#player" crossorigin="" src="/assets/images/number6.gif" transparent="true">
+    <a-image id="6" class="enemy" position="50 -50 0" look-at="#player" crossorigin="" src="#number6-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="7" class="enemy" position="-50 -50 0" look-at="#player" crossorigin="" src="/assets/images/number7.gif" transparent="true">
+    <a-image id="7" class="enemy" position="-50 -50 0" look-at="#player" crossorigin="" src="#number7-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="8" class="enemy" position="-50 50 0" look-at="#player" crossorigin="" src="/assets/images/number8.gif" transparent="true">
+    <a-image id="8" class="enemy" position="-50 50 0" look-at="#player" crossorigin="" src="#number8-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
 
-    <a-image id="9" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="/assets/images/number9.gif" transparent="true">
+    <a-image id="9" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number9-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>

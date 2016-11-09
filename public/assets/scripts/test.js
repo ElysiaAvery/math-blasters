@@ -120,11 +120,13 @@ AFRAME.registerComponent('click-listener', {
   }
 });
 var score = 0;
+var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
   if(numId == answer) {
     score += 10;
+    clearInterval(interval);
     $('#winner').show();
     $('#continue').show();
     $('#comparison').val('comparison');
@@ -135,6 +137,10 @@ function numberHit(numId) {
 }
 
 $(function() {
+  startTimer(20);
+  addNumber(9);
+  addNumber(3);
+  addNumber(4);
   // Translation
   setInterval(function() {
     var position = $("#entity").attr("position");
@@ -158,4 +164,24 @@ function translation(position, speed) {
   position.y += speed[1];
   position.z += speed[2];
   return position.x + " " + position.y + " " + position.z;
+}
+
+
+function addNumber(number) {
+  $( "#entity" ).append( '<a-image id="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
+    + '<a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>'
+    + '<a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>'
+    + '</a-image>' );
+}
+
+function startTimer(seconds) {
+  var second = 0;
+  interval = setInterval(function() {
+    $('#timer').text(seconds - second);
+    if (second >= seconds) {
+      console.log("You Lose!!!");
+      clearInterval(interval);
+    }
+    second++;
+  }, 1000);
 }
