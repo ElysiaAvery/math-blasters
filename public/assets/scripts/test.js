@@ -117,6 +117,7 @@ AFRAME.registerComponent('click-listener', {
 var deltaTime = 100; // Affects interval rate
 var orbitAngle = Math.PI*.25; // smaller makes them orbit slower
 var score = 0;
+var levelTracker = 0;
 var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
@@ -124,8 +125,11 @@ function numberHit(numId) {
   if(numId%9 == answer%9) {
     winner = true;
     score += 10;
-    orbitAngle = orbitAngle * 1.01;
-    deltaTime = deltaTime * .99;
+    levelTracker += 1;
+    if(levelTracker < 90) {
+      orbitAngle = orbitAngle * 1.01;
+      deltaTime = deltaTime * .99;
+    }
     clearInterval(interval);
     $('#winner').show();
     $('#continue').show();
@@ -192,6 +196,17 @@ function addNumber(number) {
 
 
 function startTimer(seconds) {
+  if(levelTracker > 300) {
+    seconds = 5;
+  } else if(levelTracker > 250) {
+    seconds = 7;
+  }else if(levelTracker > 200) {
+    seconds = 10;
+  }else if(levelTracker > 150) {
+    seconds = 12;
+  } else if(levelTracker > 110) {
+    seconds = 15;
+  }
   var second = 0;
   interval = setInterval(function() {
     if(winner) {
@@ -243,16 +258,3 @@ function findAxes(rotationAxis) {
   }
   return axes;
 }
-
-/////////////////////////////////////////////////////////////////////////////////
-
-// Beginnings of zig zag
-// if(position.z >= -50 && away)
-//   position.z -= .5;
-// else if (position.z <= -10 && away == false){
-//   position.z += .5;
-// }
-// if(position.z <= -50)
-//   away = false;
-// if(position.z >= -30)
-//   away = true;
