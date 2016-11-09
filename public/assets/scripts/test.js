@@ -1,4 +1,4 @@
-
+var winner = false;
 AFRAME.registerComponent('collider', {
   schema: {
     target: { default: '' }
@@ -110,15 +110,18 @@ AFRAME.registerComponent('click-listener', {
     var el = this.el;
     window.addEventListener('click', function () {
       el.emit('click', null, false);
+      winner = false; //////////////////// Winner set back to false
     });
   }
 });
+
 var score = 0;
 var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
   if(numId%9 == answer%9) {
+    winner = true;
     score += 10;
     clearInterval(interval);
     $('#winner').show();
@@ -132,9 +135,9 @@ function numberHit(numId) {
 
 //////////////////////////////////////////////////////////////////////////////////
 // JQuery
-
+var timerSeting = 20;
 $(function() {
-  startTimer(20);
+  startTimer(timerSeting);
   var randomNums = generateRandomNumberList(9);
   var orbitAngle = Math.PI/150.0; // smaller makes them orbit slower
   // Translation
@@ -147,8 +150,9 @@ $(function() {
     }
     var position = $("#entity").attr("position");
     newPosition = translate(position, [0,0,-.01]);
+    newPosition = orbit(position, -orbitAngle, 1);
     $("#entity").attr("position",  newPosition);
-  });
+  }, 100);
 
 });
 
@@ -188,12 +192,19 @@ function addNumber(number) {
 function startTimer(seconds) {
   var second = 0;
   interval = setInterval(function() {
-    $('#timer').text(seconds - second);
-    if (second >= seconds) {
-      console.log("You Lose!!!");
-      clearInterval(interval);
+    if(winner) {
+      seconds = 20;
+      console.log("winner on");
+    } else {
+      console.log("winner off");
     }
-    second++;
+    $('#timer').text(seconds);
+    if (second >= seconds) {
+      $('#timer').text("Out of Time!");
+      $("#loser").show();
+      winner = false;
+    }
+    seconds--;
   }, 1000);
 }
 
