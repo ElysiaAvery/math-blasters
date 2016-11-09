@@ -72,7 +72,7 @@
 
   <a-camera id="player" position="0 1.8 0" spawner="mixin: laser; on: click" click-listener><a-cursor><a-circle color="white" radius=".01" opacity=".1"></a-circle></a-cursor></a-camera>
 
-  <a-sphere radius="40"  position="0 50 0" metalness="0" roughness="0.5" color="gold">
+  <a-sphere radius="40"  position="0 50 0" metalness="0" light="type: ambient" roughness="0.5" color="gold">
     <a-animation attribute="rotation" dur="50000" easing="linear" repeat="indefinite" to="0 0 360"></a-animation>
 
     <a-image id="1" class="1 enemy" position="0 -50 0" look-at="#player" src="#number1-sprite"  transparent="true">
@@ -124,7 +124,7 @@
     </a-sphere>
 
     <a-animation attribute="rotation" dur="100000" easing="linear" repeat="indefinite" to="360 0 0"></a-animation>
-    <a-sphere radius="10" color="teal" roughness="0.5" metalness="0.5" position="-20 -100 200">
+    <a-sphere radius="10" color="teal" light="type: directional; color: white" roughness="0.5" metalness="0.5" position="-20 -100 200">
       <a-animation attribute="rotation" dur="1000" easing="linear" repeat="indefinite" to="0 0 360"></a-animation>
       <a-ring src="/assets/images/rings.jpg" radius-inner="17" radius-outer="12"></a-ring>
     </a-sphere>
