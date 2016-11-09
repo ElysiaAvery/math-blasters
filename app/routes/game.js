@@ -14,10 +14,8 @@ export default Ember.Route.extend({
         response.set('display', true);
         response.save();
         that.transitionTo('game');
-        addNumber(2);
-        addNumber(3);
-        addNumber(4);
 
+        startTimer(20);
       });
     }
   }
