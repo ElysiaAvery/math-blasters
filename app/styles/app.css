@@ -17,12 +17,8 @@ padding: 20px;
   text-align: center;
   color: #808497;
   position: fixed;
-<<<<<<< HEAD
-  bottom: 20%;
-=======
   bottom: 5%;
   margin-left: 5%;
->>>>>>> bd7e25a97ff4e858d4627c496520fef993fcac61
   font-size: 8em;
   text-shadow: 1px 1px 1px white;
   font-family: 'Orbitron', sans-serif;
@@ -32,6 +28,21 @@ element.style {
   height:500px;
   width:500px;
 }
+
+#score {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  color: red;
+}
+
+#timer {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  color: red;
+}
+
 
 #winner {
   text-align: center;
