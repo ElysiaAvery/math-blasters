@@ -10,7 +10,6 @@ Router.map(function() {
   this.route('help');
   this.route('highscore');
   this.route('game');
-  this.route('index');
 });
 
 export default Router;
