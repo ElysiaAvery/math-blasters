@@ -14,19 +14,57 @@
     <a-mixin id="laser"
              geometry="primitive: cylinder; radius: 0.08; translate: 0 -2 0"
              material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"
-             rotation="90 0 0" projectile collider="target: .enemy"></a-mixin>
+             rotation="90 0 0" projectile collider="target: .enemy">
+    </a-mixin>
   </a-assets>
 
-  <a-entity id='entity' layout="type: circle; radius: 5;" position="0 0.5 0">
+  <a-entity id='entity' layout="type: circle; radius: 5;" position="0 -10 -10" rotation="90 0 0">
     <a-animation attribute="rotation" dur="500000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
-    <a-image id="-9" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number9-sprite" transparent="true">
+    <a-image id="19" class="1 enemy" position="0 -50 0" look-at="#player" src="#number1-sprite"  transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="20" class="2 enemy" position="50 0 0" look-at="#player" crossorigin="" src="#number2-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
-    <a-image id="-7" class="enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number7-sprite" transparent="true">
+
+    <a-image id="21" class="3 enemy" position="-50 0 0" look-at="#player" crossorigin="" src="#number3-sprite" transparent="true">
       <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
       <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
     </a-image>
+
+    <a-image id="22" class="4 enemy" position="0 50 0" look-at="#player" crossorigin="" src="#number4-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="23" class="5 enemy" position="50 50 0" look-at="#player" crossorigin="" src="#number5-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="24" class="6 enemy" position="50 -50 0" look-at="#player" crossorigin="" src="#number6-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="25" class="7 enemy" position="-50 -50 0" look-at="#player" crossorigin="" src="#number7-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="26" class="8 enemy" position="-50 50 0" look-at="#player" crossorigin="" src="#number8-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
+    <a-image id="27" class="9 enemy" position="0 -60 0" look-at="#player" crossorigin="" src="#number9-sprite" transparent="true">
+      <a-animation attribute="opacity" begin="collider-hit" dur="400" ease="linear" from="1" to="0"></a-animation>
+      <a-animation attribute="scale" begin="collider-hit" dur="400" ease="linear" to="0 0 0"></a-animation>
+    </a-image>
+
   </a-entity>
 
 
