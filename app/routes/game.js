@@ -11,7 +11,7 @@ export default Ember.Route.extend({
       question.save();
       id++;
       var that = this;
-      this.store.findRecord('question', id%5).then(function(response) {
+      this.store.findRecord('question', id%14).then(function(response) {
         response.set('display', true);
         response.save();
         startTimer(20);
