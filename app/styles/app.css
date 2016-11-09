@@ -86,7 +86,25 @@ element.style {
   border-radius: 25px;
   display: none;
   position: fixed;
-  bottom: 100px;
+  bottom: 250px;
+  right: 100px;
+  color: #878097;
+}
+
+#endgame {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  background: #b3dced; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #b3dced 11%, #29b8e5 41%, #29b8e5 41%, #bce0ee 78%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #b3dced 11%,#29b8e5 41%,#29b8e5 41%,#bce0ee 78%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #b3dced 11%,#29b8e5 41%,#29b8e5 41%,#bce0ee 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  font-size: 5em;
+  padding: 2%;
+  border-radius: 25px;
+  display: none;
+  position: fixed;
+  bottom: 50px;
   right: 100px;
   color: #878097;
 }

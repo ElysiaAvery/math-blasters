@@ -11,6 +11,9 @@ export default Ember.Component.extend({
     },
     resetGame() {
       this.sendAction('resetGame');
+    },
+    endGame() {
+      this.sendAction('endGame');
     }
   }
 });
