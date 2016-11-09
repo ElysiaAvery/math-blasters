@@ -50,7 +50,8 @@ element.style {
   position: fixed;
   list-style: none;
   margin-right: 19%;
-  color: #878097;
+  color: lightblue;
+  text-shadow: 1px 1px 1px white;
   top: 30%;
 }
 
