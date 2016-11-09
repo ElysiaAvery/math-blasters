@@ -1,4 +1,9 @@
+
 <div class="col-sm-4 col-sm-offset-2">
   <h1 id="header">Math Blasters</h1>
   <p id="creation">Created By:</p><br><p id="names">Sandro Alvarez, Tony Fuentes, Satchel Grant, and <br>Elysia Nason</p>
 </div>
+
+{{#each scores as |score|}}
+  {{score-tile score=score}}
+{{/each}}

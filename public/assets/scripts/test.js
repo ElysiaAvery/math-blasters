@@ -118,7 +118,7 @@ var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
-  if(numId%9 == answer) {
+  if(numId%9 == answer%9) {
     score += 10;
     clearInterval(interval);
     $('#winner').show();
@@ -130,23 +130,33 @@ function numberHit(numId) {
   $('#score').text(score + 'pts');
 }
 
+//////////////////////////////////////////////////////////////////////////////////
+// JQuery
+
 $(function() {
   startTimer(20);
   var randomNums = generateRandomNumberList(9);
-  var orbitAngle = Math.PI/150.0;
+  var orbitAngle = Math.PI/150.0; // smaller makes them orbit slower
   // Translation
-  setInterval(function() {
-    // Orbit
-    for (var i = 0; i < randomNums.length; i++) {
-      var numId = randomNums[i] + 9; // + 9 because of unique ids
-      var position = $("#" + numId + "").attr('position');
-      $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
-    }
-    var position = $("#entity").attr("position");
-    newPosition = translate(position, [0,0,-.01]);
-    $("#entity").attr("position",  newPosition);
-  }, 25);
+  $('start-btn').click(function() {
+    setInterval(function() {
+      // Orbit
+      for (var i = 0; i < randomNums.length; i++) {
+        var numId = randomNums[i] + 9; // + 9 because of unique ids
+        var position = $("#" + numId + "").attr('position');
+        $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
+      }
+      var position = $("#entity").attr("position");
+      newPosition = translate(position, [0,0,-.01]);
+      $("#entity").attr("position",  newPosition);
+    }, 25);
+  });
+
 });
+
+//////////////////////////////////////////////////////////////////////////////////
+
+// function backAndForth()
 
 function translate(position, step) {
   position.x += step[0];
@@ -154,17 +164,6 @@ function translate(position, step) {
   position.z += step[2];
   return position.x + " " + position.y + " " + position.z;
 }
-
-// Beginnings of zig zag
-// if(position.z >= -50 && away)
-//   position.z -= .5;
-// else if (position.z <= -10 && away == false){
-//   position.z += .5;
-// }
-// if(position.z <= -50)
-//   away = false;
-// if(position.z >= -30)
-//   away = true;
 
 function generateRandomNumberList(maxNum) {
   numList = [];
@@ -179,7 +178,6 @@ function generateRandomNumberList(maxNum) {
   }
   return randomList;
 }
-
 
 function addNumber(number) {
   $( "#entity" ).append( '<a-image class="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
@@ -201,25 +199,15 @@ function startTimer(seconds) {
   }, 1000);
 }
 
+// Use this to orbit an axis.
 function orbit(position, angle, rotationAxis) {
   var positionVector = [position.x,position.y,position.z];
   positionVector = orbitalGenerator(positionVector, angle, rotationAxis);
   return positionVector.join(" ");
 }
 
-function rotate(rotationAngles) {
-  var rotationVector = [rotationAngles.x,rotationAngles.y,rotationAngles.z];
-  rotationVector = rotationTransform(rotationVector, 1, 5, -3);
-  return rotationVector.join(" ");
-}
-
-function rotationTransform(angleVector, xAng, yAng, zAng) {
-  angleVector[0] += xAng;
-  angleVector[1] += yAng;
-  angleVector[2] += zAng;
-  return angleVector;
-}
-
+//////////////////////////////////////////////////////////////////////////////
+// Support for orbit fxn
 function orbitalGenerator(vector, angle, rotationAxis) {
   var axes = findAxes(rotationAxis);
 
@@ -232,6 +220,7 @@ function orbitalGenerator(vector, angle, rotationAxis) {
   return vector;
 }
 
+// Support for orbit fxn
 function findAxes(rotationAxis) {
   var axes = [];
   for(var i = 0; i < 3; i++) {
@@ -241,3 +230,16 @@ function findAxes(rotationAxis) {
   }
   return axes;
 }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// Beginnings of zig zag
+// if(position.z >= -50 && away)
+//   position.z -= .5;
+// else if (position.z <= -10 && away == false){
+//   position.z += .5;
+// }
+// if(position.z <= -50)
+//   away = false;
+// if(position.z >= -30)
+//   away = true;
