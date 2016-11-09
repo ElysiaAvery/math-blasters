@@ -119,10 +119,11 @@ var orbitAngle = Math.PI*.25; // smaller makes them orbit slower
 var score = 0;
 var levelTracker = 0;
 var interval;
+var gameOver = false;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
-  if(numId%9 == answer%9) {
+  if(numId%9 == answer%9 && !gameOver) {
     winner = true;
     score += 10;
     levelTracker += 1;
@@ -133,7 +134,6 @@ function numberHit(numId) {
     clearInterval(interval);
     $('#winner').show();
     $('#continue').show();
-    $('#endgame').show();
     $('#comparison').val('comparison');
   } else {
     score -= 5;
@@ -212,16 +212,14 @@ function startTimer(seconds) {
   interval = setInterval(function() {
     if(winner) {
       seconds = 20;
-      console.log("winner on");
-    } else {
-      console.log("winner off");
     }
     $('#timer').text(seconds);
     if (second >= seconds) {
+      gameOver = true;
       $('#timer').text("Out of Time!");
       $("#loser").show();
       $("#reset").show();
-      $("#endgame").show();
+      // $("#endgame").show();
       winner = false;
       clearInterval(interval);
     }

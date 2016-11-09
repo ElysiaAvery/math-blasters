@@ -20,22 +20,34 @@ export default Ember.Route.extend({
     },
 
     resetGame() {
-      score = 0;
-      startTimer(20);
-      window.location.reload(true);
-    },
-
-    endGame() {
       var person = prompt("Please enter your name");
       var params = {
           score: score,
           name: person,
           timestamp: Date.now()
         };
+      if(person) {
+        var newScore = this.store.createRecord('score', params);
+        newScore.save();
+      }
       score = 0;
-      var newScore = this.store.createRecord('score', params);
-      newScore.save();
-      this.transitionTo('highscore');
+      startTimer(20);
+      window.location.reload(true);
     }
+
+    // endGame() {
+    //   var person = prompt("Please enter your name");
+    //   var params = {
+    //       score: score,
+    //       name: person,
+    //       timestamp: Date.now()
+    //     };
+    //   score = 0;
+    //   var newScore = this.store.createRecord('score', params);
+    //   newScore.save();
+    //   this.transitionTo('highscore');
+    //   window.location.reload(true);
+    //
+    // }
   }
 });

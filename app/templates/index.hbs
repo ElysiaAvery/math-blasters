@@ -1,5 +1,20 @@
 
-<div class="col-sm-4 col-sm-offset-2">
-  <h1 class="title">Math Blasters</h1><br>
-  <p id="creation">Created By:</p><br><p id="names">Sandro Alvarez, Tony Fuentes, Satchel Grant, and <br>Elysia Nason</p>
+<div class="thing">
+    <div class="hover">
+        <div class="laser"></div>
+    </div>
+	<div class="click">
+        <div class="claser">
+          <h1 class="title">Math Blasters</h1>
+        </div>
+    </div>
+    <br><p id="names">Sandro Alvarez, Tony Fuentes, Satchel Grant, and <br>Elysia Nason</p>
 </div>
+<!-- <div class="col-sm-4 col-sm-offset-2">
+  <h1 class="title">Math Blasters</h1>
+  <br><p id="names">Sandro Alvarez, Tony Fuentes, Satchel Grant, and <br>Elysia Nason</p>
+</div> -->
+
+{{#each scores as |score|}}
+  {{score-tile score=score}}
+{{/each}}
