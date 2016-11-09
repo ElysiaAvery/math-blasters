@@ -20,10 +20,25 @@ export default Ember.Route.extend({
 
       });
     },
+<<<<<<< HEAD
     resetGame() {
       score = 0;
       startTimer(20);
       window.location.reload(true);
+=======
+    endGame() {
+      var person = prompt("Please enter your name");
+      var params = {
+          score: score,
+          name: person,
+          timestamp: Date.now()
+          // timestamp: moment().format("MMM Do, YYYY")
+        };
+      var newScore = this.store.createRecord('score', params);
+      newScore.save();
+      console.log("ENDGAME " + score);
+      this.transitionTo('highscore');
+>>>>>>> tony-hs
     }
   }
 });
