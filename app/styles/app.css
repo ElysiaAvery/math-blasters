@@ -43,6 +43,22 @@ element.style {
   color: red;
 }
 
+.info {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  position: fixed;
+  list-style: none;
+  margin-right: 19%;
+  color: #878097;
+  top: 30%;
+}
+
+.info li {
+  padding-bottom: 5%;
+  margin-bottom: 5%;
+}
+
 
 #winner {
   text-align: center;
@@ -74,7 +90,7 @@ element.style {
   color: #878097;
 }
 
-#header {
+.title {
   text-align: center;
   color: #808497;
   position: fixed;
