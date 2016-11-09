@@ -152,7 +152,7 @@ $(function() {
     newPosition = translate(position, [0,0,-.01]);
     newPosition = orbit(position, -orbitAngle, 1);
     $("#entity").attr("position",  newPosition);
-  }, 100);
+  }, 1000);
 
 });
 
