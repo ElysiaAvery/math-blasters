@@ -221,6 +221,7 @@ function startTimer(seconds) {
       $('#timer').text("Out of Time!");
       $("#loser").show();
       $("#reset").show();
+      $("#endgame").show();
       winner = false;
       clearInterval(interval);
     }

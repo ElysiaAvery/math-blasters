@@ -16,8 +16,6 @@ export default Ember.Route.extend({
         response.save();
         startTimer(20);
         that.transitionTo('game');
-
-
       });
     },
 
