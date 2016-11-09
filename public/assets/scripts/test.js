@@ -144,6 +144,7 @@ function translate(position, step) {
   return position.x + " " + position.y + " " + position.z;
 }
 
+// Beginnings of zig zag
 // if(position.z >= -50 && away)
 //   position.z -= .5;
 // else if (position.z <= -10 && away == false){
@@ -153,3 +154,12 @@ function translate(position, step) {
 //   away = false;
 // if(position.z >= -30)
 //   away = true;
+
+
+function addNumber(number) {
+  $( "#mainEntity" ).append( '<a-image id="' + number + '" class="enemy" look-at="#player" src="#number' + number + '-sprite"  transparent="true">'
+    + '<a-animation attribute="opacity" begin="collider-hit" dur="1000" ease="linear" from="1" to="0"></a-animation>'
+    + '<a-animation attribute="scale" begin="collider-hit" dur="1000" ease="linear" to="0 0 0"></a-animation>'
+    + '</a-image>' );
+  console.log("Made it Here");
+}

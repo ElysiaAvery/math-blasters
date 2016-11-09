@@ -1,6 +1,15 @@
 <a-scene canvas="height: 50; width: 50">
   <a-assets>
     <img id="number1-sprite" crossorigin="" src="/assets/images/number1.gif">
+    <img id="number2-sprite" crossorigin="" src="/assets/images/number2.gif">
+    <img id="number3-sprite" crossorigin="" src="/assets/images/number3.gif">
+    <img id="number4-sprite" crossorigin="" src="/assets/images/number4.gif">
+    <img id="number5-sprite" crossorigin="" src="/assets/images/number5.gif">
+    <img id="number6-sprite" crossorigin="" src="/assets/images/number6.gif">
+    <img id="number7-sprite" crossorigin="" src="/assets/images/number7.gif">
+    <img id="number8-sprite" crossorigin="" src="/assets/images/number8.gif">
+    <img id="number9-sprite" crossorigin="" src="/assets/images/number9.gif">
+
 
     <a-mixin id="laser"
              geometry="primitive: cylinder; radius: 0.08; translate: 0 -2 0"
@@ -9,7 +18,11 @@
   </a-assets>
 
   <!-- Behold, the power of components. -->
+<<<<<<< HEAD
   <a-entity id='entity' layout="type: circle; radius: 5" position="0 0.5 0">
+=======
+  <a-entity id="mainEntity" layout="type: circle; radius: 5" position="0 0.5 0">
+>>>>>>> tonystuff
     <a-animation attribute="rotation" dur="30000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
   </a-entity>
 
