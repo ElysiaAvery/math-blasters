@@ -8,6 +8,10 @@ export default Ember.Component.extend({
         $("." + i).attr("scale", "1 1 1");
       }
       this.sendAction('nextQuestion', this.get('question'));
+    },
+    endGame() {
+
+      this.sendAction('endGame');
     }
   }
 });
