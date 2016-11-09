@@ -113,7 +113,7 @@ element.style {
   text-align: center;
   color: #808497;
   position: fixed;
-  margin-right: 37%;
+  margin-right: 155%;
   top: 10%;
   font-size: 8em;
   text-shadow: 1px 1px 1px white;
@@ -157,11 +157,10 @@ body {
 
 .hover {
 	height: 0%;
-	/*background: url(http://cssdeck.com/uploads/media/items/4/4af1rdU.png) no-repeat;*/
+	/*background: url(https://secure.static.tumblr.com/04bcdb25c4755e17308c65d08aa8ec7e/8t5ihtw/Gjenve6l0/tumblr_static_tumblr_static__640.gif);*/
 	position: absolute;
 	background-position: 45% 0;
 	z-index: 2;
-  color: lightblue
 
 	-webkit-transition: height 1s ease;
 	-moz-transition: height 1s ease;
@@ -173,7 +172,6 @@ body {
 
 .click {
 	height: 0%;
-	/*background: url(http://cssdeck.com/uploads/media/items/1/1ICzabQ.png) no-repeat;*/
 	position: absolute;
 	background-position: 45% 0;
 	z-index: 2;
