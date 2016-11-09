@@ -1,4 +1,5 @@
 var winner = false;
+var initiateTimer = false;
 AFRAME.registerComponent('collider', {
   schema: {
     target: { default: '' }
@@ -111,6 +112,7 @@ AFRAME.registerComponent('click-listener', {
     window.addEventListener('click', function () {
       el.emit('click', null, false);
       winner = false; //////////////////// Winner set back to false
+      initiateTimer = true;
     });
   }
 });
@@ -223,7 +225,9 @@ function startTimer(seconds) {
       winner = false;
       clearInterval(interval);
     }
-    seconds--;
+    if(initiateTimer) {
+      seconds--;
+    }
   }, 1000);
 }
 
