@@ -138,18 +138,16 @@ $(function() {
   var randomNums = generateRandomNumberList(9);
   var orbitAngle = Math.PI/150.0; // smaller makes them orbit slower
   // Translation
-  $('start-btn').click(function() {
-    setInterval(function() {
-      // Orbit
-      for (var i = 0; i < randomNums.length; i++) {
-        var numId = randomNums[i] + 9; // + 9 because of unique ids
-        var position = $("#" + numId + "").attr('position');
-        $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
-      }
-      var position = $("#entity").attr("position");
-      newPosition = translate(position, [0,0,-.01]);
-      $("#entity").attr("position",  newPosition);
-    }, 25);
+  setInterval(function() {
+    // Orbit
+    for (var i = 0; i < randomNums.length; i++) {
+      var numId = randomNums[i] + 9; // + 9 because of unique ids
+      var position = $("#" + numId + "").attr('position');
+      $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
+    }
+    var position = $("#entity").attr("position");
+    newPosition = translate(position, [0,0,-.01]);
+    $("#entity").attr("position",  newPosition);
   });
 
 });
