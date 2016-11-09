@@ -133,6 +133,7 @@ function numberHit(numId) {
     clearInterval(interval);
     $('#winner').show();
     $('#continue').show();
+    $('#endgame').show();
     $('#comparison').val('comparison');
   } else {
     score -= 5;
