@@ -152,7 +152,7 @@ $(function() {
     newPosition = translate(position, [0,0,-.01]);
     newPosition = orbit(position, -orbitAngle, 1);
     $("#entity").attr("position",  newPosition);
-  }, 100);
+  }, 1000);
 
 });
 
@@ -202,7 +202,9 @@ function startTimer(seconds) {
     if (second >= seconds) {
       $('#timer').text("Out of Time!");
       $("#loser").show();
+      $("#reset").show();
       winner = false;
+      clearInterval(interval);
     }
     seconds--;
   }, 1000);

@@ -61,7 +61,7 @@ element.style {
 }
 
 
-#winner {
+#winner, #loser {
   text-align: center;
   /*margin-left: 25%;*/
   font-size: 8em;
@@ -73,7 +73,7 @@ element.style {
   color: #878097;
 }
 
-#continue {
+#continue, #reset {
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
   background: #b3dced; /* Old browsers */

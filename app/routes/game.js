@@ -14,10 +14,16 @@ export default Ember.Route.extend({
       this.store.findRecord('question', id%5).then(function(response) {
         response.set('display', true);
         response.save();
+        startTimer(20);
         that.transitionTo('game');
 
-        startTimer(20);
+
       });
+    },
+    resetGame() {
+      score = 0;
+      startTimer(20);
+      window.location.reload(true);
     }
   }
 });
