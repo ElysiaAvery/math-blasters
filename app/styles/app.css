@@ -44,18 +44,17 @@ element.style {
 }
 
 .info {
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
   position: fixed;
   list-style: none;
-  margin-right: 19%;
-  color: lightblue;
-  text-shadow: 1px 1px 1px white;
+  margin-left: 10%;
+  margin-bottom: 10%;
   top: 30%;
 }
 
-.info li {
+.info p{
   padding-bottom: 5%;
   margin-bottom: 5%;
 }
@@ -111,35 +110,84 @@ element.style {
 
 .title {
   text-align: center;
-  color: #808497;
+  /*color: #808497;*/
   position: fixed;
-  margin-right: 155%;
+  margin-left: 10%;
   top: 10%;
   font-size: 8em;
-  text-shadow: 1px 1px 1px white;
+  text-shadow: 0px 1px 5px #0099ff;
   font-family: 'Orbitron', sans-serif;
 }
 
-#creation {
+p {
   text-align: center;
-  color: #73848A;
-  margin-left: 30%;
-  font-size: 1.5em;
-  top: 25%;
-  text-shadow: 1px 1px 1px white;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
-  /*color: lightblue;*/
+  font-size: 7em;
+  margin: 20px 0 20px 0;
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
 
+p {
+  font-size: 1.5em;
+  color: #228DFF;
+  font-family: 'Orbitron', sans-serif;
+}
+
+p:hover {
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+p:hover {
+  color: #ffffff;
+}
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@media (max-width: 650px) {
+  #container {
+    width: 100%;
+  }
+  p {
+    font-size: 3.5em;
+  }
 }
 
 #names {
   text-align: center;
   color: #73848A;
-  margin-right: 30%;
+  margin-left: 13%;
   position: fixed;
   font-size: 2em;
-  top: 45%;
+  top: 28%;
   text-shadow: 1px 1px 1px white;
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
@@ -151,174 +199,4 @@ element.style {
 
 body {
   background-image: url('/assets/images/pixel.png');
-}
-
-.thing {
-	position: relative;
-	width: 475px;
-	height: 400px;
-	margin: 50px auto;
-}
-
-.background {
-	position: absolute;
-	z-index: 1;
-	left: 120px;
-	display: block;
-}
-
-.hover {
-	height: 0%;
-	/*background: url(https://secure.static.tumblr.com/04bcdb25c4755e17308c65d08aa8ec7e/8t5ihtw/Gjenve6l0/tumblr_static_tumblr_static__640.gif);*/
-	position: absolute;
-	background-position: 45% 0;
-	z-index: 2;
-
-	-webkit-transition: height 1s ease;
-	-moz-transition: height 1s ease;
-	-o-transition: height 1s ease;
-	-ms-transition: height 1s ease;
-	transition: height 1s ease;
-	width: 100%;
-}
-
-.click {
-	height: 0%;
-	position: absolute;
-	background-position: 45% 0;
-	z-index: 2;
-
-	-webkit-transition: height 1s ease;
-	-moz-transition: height 1s ease;
-	-o-transition: height 1s ease;
-	-ms-transition: height 1s ease;
-	transition: height 1s ease;
-	width: 100%;
-}
-
-.thing:hover .hover {
-	height: 100%;
-  color: lightblue;
-}
-
-.thing:active .click {
-	height: 100%;
-}
-
-.laser {
-	height: 3px;
-	width: 100%;
-	background: #86ff5e;
-	display: block;
-	position: absolute;
-	bottom: -2px;
-  color: lightblue;
-
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-
-	-webkit-box-shadow: 0 0 20px 10px #86ff5e;
-	-moz-box-shadow: 0 0 20px 10px #86ff5e;
-	box-shadow: 0 0 20px 10px #86ff5e;
-
-	-webkit-transition: opacity .25s ease;
-	-moz-transition: opacity .25s ease;
-	-o-transition: opacity .25s ease;
-	-ms-transition: opacity .25s ease;
-	transition: opacity .25s ease;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	opacity: 0;
-
-	-webkit-transition-delay: .75s;
-	-moz-transition-delay: .75s;
-	-o-transition-delay: .75s;
-	-ms-transition-delay: .75s;
-	transition-delay: .75s;
-}
-
-.claser {
-	height: 3px;
-	width: 100%;
-	background: #01c9ee;
-	display: block;
-	position: absolute;
-	bottom: -2px;
-  color: lightblue;
-
-	-webkit-border-radius: 70%;
-	-moz-border-radius: 70%;
-	border-radius: 70%;
-
-	-webkit-box-shadow: 0 0 20px 10px #01c9ee;
-	-moz-box-shadow: 0 0 20px 10px #01c9ee;
-	box-shadow: 0 0 20px 10px #01c9ee;
-
-	-webkit-transition: opacity .25s ease;
-	-moz-transition: opacity .25s ease;
-	-o-transition: opacity .25s ease;
-	-ms-transition: opacity .25s ease;
-	transition: opacity .25s ease;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	opacity: 0;
-
-	-webkit-transition-delay: .75s;
-	-moz-transition-delay: .75s;
-	-o-transition-delay: .75s;
-	-ms-transition-delay: .75s;
-	transition-delay: .75s;
-}
-
-.thing:hover .laser {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-  color: lightblue;
-
-	-webkit-transition-delay: 0s;
-	-moz-transition-delay: 0s;
-	-o-transition-delay: 0s;
-	-ms-transition-delay: 0s;
-	transition-delay: 0s;
-}
-
-.thing:active.laser {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-  color: lightblue;
-
-	-webkit-transition-delay: 0s;
-	-moz-transition-delay: 0s;
-	-o-transition-delay: 0s;
-	-ms-transition-delay: 0s;
-	transition-delay: 0s;
-}
-
-.thing:hover .claser {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-  color: lightblue;
-
-	-webkit-transition-delay: 0s;
-	-moz-transition-delay: 0s;
-	-o-transition-delay: 0s;
-	-ms-transition-delay: 0s;
-	transition-delay: 0s;
-}
-
-.thing:active.claser {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-  color: lightblue;
-
-	-webkit-transition-delay: 0s;
-	-moz-transition-delay: 0s;
-	-o-transition-delay: 0s;
-	-ms-transition-delay: 0s;
-	transition-delay: 0s;
 }
