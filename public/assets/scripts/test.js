@@ -202,7 +202,9 @@ function startTimer(seconds) {
     if (second >= seconds) {
       $('#timer').text("Out of Time!");
       $("#loser").show();
+      $("#reset").show();
       winner = false;
+      clearInterval(interval);
     }
     seconds--;
   }, 1000);

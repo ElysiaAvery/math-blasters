@@ -2,6 +2,6 @@
 {{game-display}}
 {{#each model as |question|}}
   {{#if question.display}}
-    {{question-display question=question nextQuestion="nextQuestion"}}
+    {{question-display question=question nextQuestion="nextQuestion" resetGame="resetGame"}}
   {{/if}}
 {{/each}}
