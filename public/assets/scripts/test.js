@@ -130,6 +130,9 @@ function numberHit(numId) {
   $('#score').text(score + 'pts');
 }
 
+//////////////////////////////////////////////////////////////////////////////////
+// JQuery
+
 $(function() {
   startTimer(20);
   var randomNums = generateRandomNumberList(9);
@@ -147,6 +150,8 @@ $(function() {
     $("#entity").attr("position",  newPosition);
   }, 25);
 });
+
+//////////////////////////////////////////////////////////////////////////////////
 
 function translate(position, step) {
   position.x += step[0];
