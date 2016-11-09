@@ -118,7 +118,7 @@ var interval;
 function numberHit(numId) {
   numId = parseInt(numId);
   var answer = parseInt($("#answer").val());
-  if(numId%9 == answer) {
+  if(numId%9 == answer%9) {
     score += 10;
     clearInterval(interval);
     $('#winner').show();

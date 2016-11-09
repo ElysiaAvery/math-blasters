@@ -17,13 +17,9 @@ padding: 20px;
   text-align: center;
   color: #808497;
   position: fixed;
-<<<<<<< HEAD
-  bottom: 20%;
-=======
   bottom: 5%;
   margin-left: 5%;
->>>>>>> bd7e25a97ff4e858d4627c496520fef993fcac61
-  font-size: 8em;
+  font-size: 7em;
   text-shadow: 1px 1px 1px white;
   font-family: 'Orbitron', sans-serif;
 }
