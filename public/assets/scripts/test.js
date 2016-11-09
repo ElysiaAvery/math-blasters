@@ -114,7 +114,8 @@ AFRAME.registerComponent('click-listener', {
     });
   }
 });
-
+var deltaTime = 100; // Affects interval rate
+var orbitAngle = Math.PI*.25; // smaller makes them orbit slower
 var score = 0;
 var interval;
 function numberHit(numId) {
@@ -123,6 +124,8 @@ function numberHit(numId) {
   if(numId%9 == answer%9) {
     winner = true;
     score += 10;
+    orbitAngle = orbitAngle * 1.01;
+    deltaTime = deltaTime * .99;
     clearInterval(interval);
     $('#winner').show();
     $('#continue').show();
@@ -135,24 +138,23 @@ function numberHit(numId) {
 
 //////////////////////////////////////////////////////////////////////////////////
 // JQuery
-var timerSeting = 20;
+var timerSetting = 20; // Affects timer duration
 $(function() {
-  startTimer(timerSeting);
+  startTimer(timerSetting);
   var randomNums = generateRandomNumberList(9);
-  var orbitAngle = Math.PI/150.0; // smaller makes them orbit slower
   // Translation
   setInterval(function() {
     // Orbit
     for (var i = 0; i < randomNums.length; i++) {
       var numId = randomNums[i] + 9; // + 9 because of unique ids
       var position = $("#" + numId + "").attr('position');
-      $("#" + numId + "").attr("position",  orbit(position, orbitAngle, 1));
+      $("#" + numId + "").attr("position",  orbit(position, orbitAngle/deltaTime, 1));
     }
     var position = $("#entity").attr("position");
     newPosition = translate(position, [0,0,-.01]);
-    newPosition = orbit(position, -orbitAngle, 1);
+    newPosition = orbit(position, -orbitAngle/deltaTime, 1);
     $("#entity").attr("position",  newPosition);
-  }, 1000);
+  }, deltaTime);
 
 });
 
