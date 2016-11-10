@@ -1,5 +1,7 @@
 # Math Blasters VR
 
+![project screenshot](/screenshot.png)
+
 A web app game that asks the user varying levels of math questions so they may accrue points.
 Math Blasters VR implements the A-Frame framework and Ember.js framework.
 
