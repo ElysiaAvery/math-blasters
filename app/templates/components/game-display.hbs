@@ -128,9 +128,11 @@
 
 
 
-    <a-sphere radius="10" src="assets/images/earth.jpg" position="0 -100 0">
+    <a-sphere radius="20" src="assets/images/earth.jpg" position="0 -200 0">
       <a-animation attribute="rotation" dur="10000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
-      <a-sphere src="/assets/images/moon.jpg" radius="20" position="-300 -200 20"></a-sphere>
+      <a-sphere src="/assets/images/moon.jpg" radius="5" position="20 0 50">
+        <a-animation attribute="rotation" dur="5000" easing="linear" repeat="indefinite" to="0 360 0"></a-animation>
+      </a-sphere>
     </a-sphere>
   </a-sphere>
 
