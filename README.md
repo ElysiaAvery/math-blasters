@@ -1,7 +1,9 @@
-# Epic Mathblasters
+# Math Blasters VR
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+![project screenshot](/screenshot.png)
+
+A web app game that asks the user varying levels of math questions so they may accrue points.
+Math Blasters VR implements the A-Frame framework and Ember.js framework.
 
 ## Prerequisites
 
@@ -13,17 +15,16 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](http://ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
 
-## Installation
 
-* `git clone <repository-url>` this repository
-* `cd epic-mathblasters`
-* `npm install`
-* `bower install`
+## Setup/Installation Requirements
 
-## Running / Development
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* In your terminal window:
+  * `$ git clone https://github.com/SandroMateo/math-blasters`
+  * Navigate to the math-blasters directory: `$ cd math-blasters`
+  * `$ npm install`
+  * `$ bower install`
+  * Enter the command: `$ ember s`
+* In the browser of your choosing, navigate to "localhost:4200" (tested in Chrome).
 
 ### Code Generators
 
@@ -39,9 +40,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
@@ -50,3 +48,27 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## Support and contact details
+
+Sandro Alvarez: _sandromateo22@gmail.com_
+Tony Fuentes: _leobender@gmail.com_
+Satchel Grant: _grantsrb@gmail.com_
+Elysia Nason: _elysia.avery@gmail.com_
+
+## Technologies Used
+
+_JavaScript,
+Ember.js,
+A-Frame,
+Bower,
+Node.js,
+Moment.js,
+Semantic UI,
+CSS_
+
+  ### License
+
+  This webpage is licensed under the GPL license.
+
+  Copyright &copy; 2016 **_Sandro Alvarez, Tony Fuentes, Satchel Grant, &amp; Elysia Avery Nason_**

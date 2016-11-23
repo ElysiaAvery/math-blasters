@@ -23,5 +23,37 @@
     "compQuestion": "10 / 5 = ?",
     "answer": 2 ,
     "display": false
+  }, {
+    "compQuestion": "x + 1 = 4, x = ?",
+    "answer": 3,
+    "display": false
+  }, {
+    "compQuestion": "2x + 20 = 34, x = ?",
+    "answer": 7,
+    "display": false
+  }, {
+    "compQuestion": "6x + 8 = 14, x = ?",
+    "answer": 1,
+    "display": false
+  }, {
+    "compQuestion": "10x + 13 = 103, x = ?",
+    "answer": 9,
+    "display": false
+  }, {
+    "compQuestion": "3x + 6 = 21, x = ?",
+    "answer": 5,
+    "display": false
+  }, {
+    "compQuestion": "y = 4x^2, y'' = ?",
+    "answer": 8,
+    "display": false
+  }, {
+    "compQuestion": "y = 3x^2, y'' = ?",
+    "answer": 6,
+    "display": false
+  }, {
+    "compQuestion": "y = 2x^2, y'' = ?",
+    "answer": 4,
+    "display": false
   }]
 }

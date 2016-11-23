@@ -30,17 +30,21 @@ element.style {
 }
 
 #score {
+  font-family: 'Orbitron', sans-serif;
   position: fixed;
   top: 50px;
   right: 50px;
   color: red;
+  font-size: 4em;
 }
 
 #timer {
+  font-family: 'Orbitron', sans-serif;
   position: fixed;
   top: 50px;
   left: 50px;
   color: red;
+  font-size: 4em;
 }
 
 .info {
@@ -85,7 +89,7 @@ element.style {
   border-radius: 25px;
   display: none;
   position: fixed;
-  bottom: 250px;
+  bottom: 80px;
   right: 100px;
   color: #878097;
 }
@@ -199,4 +203,9 @@ p:hover {
 
 body {
   background-image: url('/assets/images/pixel.png');
+}
+
+.score-keeper {
+  color: white;
+  background-color: black;
 }

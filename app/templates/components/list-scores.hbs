@@ -1,9 +1,9 @@
-<h2> High Scores </h2>
+<h2>High Scores</h2>
 <div class="ui segments">
   {{#if scores}}
     {{#each sortedScores as |score|}}
       <div class="ui segment secondary">
-          <h3>{{score.score}}pts - {{date-format score.timestamp}} - {{score.name}}</h3>
+          <p>{{score.score}}pts - {{date-format score.timestamp}} - {{score.name}}</p>
       </div>
     {{/each}}
   {{else}}
